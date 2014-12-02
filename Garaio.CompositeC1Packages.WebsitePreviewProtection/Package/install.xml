@@ -1,0 +1,35 @@
+<?xml version="1.0" standalone="yes"?>
+
+<mi:PackageInstaller xmlns:mi="http://www.composite.net/ns/management/packageinstaller/1.0">
+	<mi:PackageRequirements minimumCompositeVersion="4.2.5287.17495" maximumCompositeVersion="9.9999.9999.9999"/>
+	<mi:PackageInformation name="Garaio.CompositeC1Packages.WebsitePreviewProtection"
+	                       groupName="Garaio"
+	                       version="1.0.0"
+	                       author="GARAIO AG"
+	                       website="http://www.garaio.com"
+	                       readMoreUrl="https://github.com/garaio/Garaio.CompositeC1Packages.WebsitePreviewProtection"
+	                       id="{77EF026D-B16D-4BDA-BDE9-78B7010BCB06}"
+	                       canBeUninstalled="true"
+	                       systemLocking="hard"
+	                       flushOnCompletion="true">
+		<Description>With this package, you can restrict access to users in a specific usergroup.</Description>
+		<TechnicalDetails></TechnicalDetails>
+	</mi:PackageInformation>
+
+	<mi:PackageFragmentInstallers>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FilePackageFragmentUninstaller, Composite">
+			<Directories>
+				<Directory sourceDirectory="~/Garaio/WebsitePreviewProtection/" targetDirectory="~/Garaio/WebsitePreviewProtection/" allowOverwrite="true" deleteTargetDirectory="false"/>
+				<Directory sourceDirectory="~/Config/" targetDirectory="~/Garaio/WebsitePreviewProtection/Config/" allowOverwrite="true" deleteTargetDirectory="false"/>
+			</Directories>
+			<Files>
+				<File sourceFilename="~\Bin\Garaio.CompositeC1Packages.WebsitePreviewProtection.dll" targetFilename="~\Bin\Garaio.CompositeC1Packages.WebsitePreviewProtection.dll" allowOverwrite="true" />
+			</Files>
+		</mi:Add>
+		<mi:Add installerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FileXslTransformationPackageFragmentInstaller, Composite" uninstallerType="Composite.Core.PackageSystem.PackageFragmentInstallers.FileXslTransformationPackageFragmentUninstaller, Composite">
+			<XslFiles>
+				<XslFile pathXml="~/Web.config" installXsl="~\Config\Install.xsl" uninstallXsl="~\Config\Uninstall.xsl"/>
+			</XslFiles>
+		</mi:Add>
+	</mi:PackageFragmentInstallers>
+</mi:PackageInstaller>
