@@ -13,7 +13,7 @@
 	                       systemLocking="hard"
 	                       flushOnCompletion="true">
 		<Description>With this package, you can restrict access to users in a specific usergroup.</Description>
-		<TechnicalDetails></TechnicalDetails>
+		<TechnicalDetails>Rewrites your web.config and activates forms authentication for your website. Creates a user group with the name [Previewers].</TechnicalDetails>
 	</mi:PackageInformation>
 
 	<mi:PackageFragmentInstallers>

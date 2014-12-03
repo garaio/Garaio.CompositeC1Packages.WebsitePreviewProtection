@@ -10,3 +10,9 @@ If you’d like to provide preview access to your website (for example) just for
 The restriction to your website is right active, after the package successfully has been installed.
 To grand user’s access to your website, you just have to add them to the automatically generated user group named “Previewers”.
 After that, every group member can access your site via a login page by passing his credentials.
+
+### Where can I find further information?
+Our Composite C1 Add-ons are hosted @ Github: https://github.com/garaio
+We appreciate your comments and ideas for improvements.
+
+Thank you!
