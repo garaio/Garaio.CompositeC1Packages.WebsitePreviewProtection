@@ -43,16 +43,17 @@
     <Reference Include="System.Web" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Package\App_GlobalResources\Resources.Text.Designer.cs">
+    <Compile Include="Garaio.WebsitePreviewProtection.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.Text.resx</DependentUpon>
+      <DependentUpon>Garaio.WebsitePreviewProtection.resx</DependentUpon>
     </Compile>
-    <Compile Include="Package\Garaio\WebsitePreviewProtection\WebsitePreviewProtection.aspx.cs">
+    <Compile Include="PreviewProtectionHandler.cs" />
+    <Compile Include="WebsitePreviewProtection.aspx.cs">
       <DependentUpon>WebsitePreviewProtection.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Package\Garaio\WebsitePreviewProtection\WebsitePreviewProtection.aspx.designer.cs">
+    <Compile Include="WebsitePreviewProtection.aspx.designer.cs">
       <DependentUpon>WebsitePreviewProtection.aspx.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -71,20 +72,25 @@
     <Content Include="Package\install.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Package\Garaio\WebsitePreviewProtection\WebsitePreviewProtection.aspx">
+    <Content Include="WebsitePreviewProtection.aspx">
       <SubType>ASPXCodeBehind</SubType>
     </Content>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <EmbeddedResource Include="Package\App_GlobalResources\Resources.Text.resx">
+    <Folder Include="Package\App_GlobalResources\" />
+    <Folder Include="Package\Garaio\WebsitePreviewProtection\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Garaio.WebsitePreviewProtection.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Text.Designer.cs</LastGenOutput>
+      <LastGenOutput>Garaio.WebsitePreviewProtection.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>xcopy "$(TargetDir)Garaio.CompositeC1Packages.*.dll" "$(ProjectDir)Package\Bin\" /E /I /Y
+xcopy "$(ProjectDir)WebsitePreviewProtection.aspx" "$(ProjectDir)Package\Garaio\WebsitePreviewProtection" /I /Y
+xcopy "$(ProjectDir)Garaio.WebsitePreviewProtection.resx" "$(ProjectDir)Package\App_GlobalResources" /I /Y
 del "$(ProjectDir)\Package\$(TargetName).zip"
 "$(ProjectDir)..\References\7za.exe" a "$(ProjectDir)\Package\$(TargetName).zip" -tzip -r "$(ProjectDir)\Package\*"</PostBuildEvent>
   </PropertyGroup>

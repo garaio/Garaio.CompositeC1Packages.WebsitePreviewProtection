@@ -6,18 +6,21 @@
 		</xsl:copy>
 	</xsl:template>
 	
-	<xsl:template match="configuration/system.web">
+	<xsl:template match="configuration/system.web/httpModules">
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
-			<xsl:if test="count(authentication) = 0">
-				<authentication mode="Forms">
-					<forms loginUrl="~/Garaio/WebsitePreviewProtection/WebsitePreviewProtection.aspx" name=".ASPXFORMSAUTH"  protection="All" timeout="30" path="/" />
-				</authentication>
+			<xsl:if test="count(add[@name='WebsitePreviewProtectionModule']) = 0">
+				<add name="WebsitePreviewProtectionModule" type="Garaio.CompositeC1Packages.WebsitePreviewProtection.PreviewProtectionHandler, Garaio.CompositeC1Packages.WebsitePreviewProtection" />
 			</xsl:if>
-			<xsl:if test="count(authorization) = 0">
-				<authorization>
-					<deny users="?" />
-				</authorization>
+		</xsl:copy>
+	</xsl:template>
+	
+	<xsl:template match="configuration/system.webServer/modules">
+		<xsl:copy>
+			<xsl:apply-templates select="@* | node()" />
+			<xsl:if test="count(add[@name='WebsitePreviewProtectionModule']) = 0">
+				<remove name="WebsitePreviewProtectionModule" />
+				<add name="WebsitePreviewProtectionModule" type="Garaio.CompositeC1Packages.WebsitePreviewProtection.PreviewProtectionHandler, Garaio.CompositeC1Packages.WebsitePreviewProtection" />
 			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
@@ -25,7 +28,9 @@
 	<xsl:template match="configuration/appSettings">
 		<xsl:copy>
 			<xsl:apply-templates select="@* | node()" />
-			<add key="ValidationSettings:UnobtrusiveValidationMode" value="None" />
+			<xsl:if test="count(add[@key='ValidationSettings:UnobtrusiveValidationMode']) = 0">
+				<add key="ValidationSettings:UnobtrusiveValidationMode" value="None" />
+			</xsl:if>
 		</xsl:copy>
 	</xsl:template>
 	

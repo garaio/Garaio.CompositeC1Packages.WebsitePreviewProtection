@@ -5,7 +5,8 @@
 				<xsl:apply-templates select="@* | node()" />
 		</xsl:copy>
 	</xsl:template>
-	<xsl:template match="configuration/system.web/authentication" />
-	<xsl:template match="configuration/system.web/authorization" />
-	<xsl:template match="configuration/appSettings" />
+	<xsl:template match="configuration/system.web/httpModules/add[@name='WebsitePreviewProtectionModule']" />
+	<xsl:template match="configuration/system.webServer/modules/remove[@name='WebsitePreviewProtectionModule']" />
+	<xsl:template match="configuration/system.webServer/modules/add[@name='WebsitePreviewProtectionModule']" />
+	<xsl:template match="configuration/appSettings/add[@key='ValidationSettings:UnobtrusiveValidationMode']" />
 </xsl:stylesheet>

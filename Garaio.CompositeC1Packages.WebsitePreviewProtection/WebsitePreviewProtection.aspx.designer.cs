@@ -7,14 +7,19 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using System;
-
-namespace Garaio.CompositeC1Packages.WebsitePreviewProtection.Package.Garaio.WebsitePreviewProtection
-{
-
-
-	public partial class WebsitePreviewProtection
-	{
+namespace Garaio.CompositeC1Packages.WebsitePreviewProtection {
+    
+    
+    public partial class WebsitePreviewProtection {
+        
+        /// <summary>
+        /// frmLogin control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlForm frmLogin;
         
         /// <summary>
         /// LoginFailedContainer control.
@@ -44,12 +49,12 @@ namespace Garaio.CompositeC1Packages.WebsitePreviewProtection.Package.Garaio.Web
         protected global::System.Web.UI.HtmlControls.HtmlInputPassword txtPassword;
         
         /// <summary>
-        /// ckbRemember control.
+        /// btnLogin control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputCheckBox ckbRemember;
+        protected global::System.Web.UI.WebControls.LinkButton btnLogin;
     }
 }

@@ -127,18 +127,30 @@
     <value>Username</value>
   </data>
   <data name="ManagerLog_UsergroupCreated" xml:space="preserve">
-    <value>usergroup "{0}" created</value>
+    <value>Usergroup "{0}" created</value>
   </data>
   <data name="ManagerLog_UserNotInGroup" xml:space="preserve">
-    <value>user not in group "{0}"</value>
+    <value>User not in group "{0}"</value>
   </data>
   <data name="ManagerLog_WrongUsernameOrPassword" xml:space="preserve">
-    <value>wrong username or password</value>
+    <value>Wrong username or password</value>
   </data>
   <data name="Page_Title" xml:space="preserve">
     <value>Content Authentication - Login</value>
   </data>
   <data name="Splash_Text" xml:space="preserve">
     <value>The entered url is protected, please enter C1 Console credentials</value>
+  </data>
+  <data name="ManagerLog_Successful" xml:space="preserve">
+    <value>Login successful</value>
+  </data>
+  <data name="ManagerLog_GroupCreatedTitle" xml:space="preserve">
+    <value>Garaio.WebsitePreviewProtection: Group created</value>
+  </data>
+  <data name="ManagerLog_DefaultUsersAddedToGroup" xml:space="preserve">
+    <value>The following users were added to the group "{0}": {1}</value>
+  </data>
+  <data name="ManagerLog_DefaultUsersAddedToGroupTitle" xml:space="preserve">
+    <value>Default users added to preview group</value>
   </data>
 </root>
